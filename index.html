@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gettik Downloader Enterprise v1.0 — Ultimate TikTok & YouTube Desktop Toolkit</title>
+    <meta name="description" content="Powerful TikTok & YouTube downloader, creator manager, smart video auto-splitting, and 10-worker fast bulk downloading desktop software.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Glow Background Elements -->
+    <div class="bg-glow orb-1"></div>
+    <div class="bg-glow orb-2"></div>
+    <div class="bg-glow orb-3"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 6V18M12 18L16 14M12 18L8 14" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logo-grad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#00F2FE"/>
+                                <stop offset="1" stop-color="#4FACFE"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Gettik</span>
+                    <span class="brand-badge">ENTERPRISE</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#tiktok" class="nav-link">TikTok</a>
+                <a href="#youtube" class="nav-link">YouTube</a>
+                <a href="#auto-split" class="nav-link">Auto Split</a>
+                <a href="#creator-manager" class="nav-link">Creator Manager</a>
+                <a href="#engine" class="nav-link">10-Worker Engine</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://wa.me/923178121095" target="_blank" class="btn btn-secondary nav-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.192 4.292-1.125zm10.741-6.757c-.125-.208-.458-.333-.96-.584s-2.966-1.464-3.425-1.631c-.458-.167-.792-.25-.125.25.125.5.458 1.083.583 1.25.125.167.25.208.5.083s1.06-.39 2.019-1.244c.747-.666 1.251-1.488 1.397-1.739.146-.25.016-.375-.109-.5-.112-.112-.25-.292-.375-.438s-.167-.25-.25-.417c-.083-.167-.042-.313.021-.438s.583-1.405.8-1.926c.21-.508.423-.438.583-.446l.5-.008c.167 0 .438.063.667.313s.875.854.875 2.083-.896 2.417-1.021 2.583c-.125.167-1.742 2.66-4.221 3.729-.59.254-1.051.406-1.411.52-.593.188-1.133.161-1.56.097-.476-.071-1.464-.598-1.672-1.175-.208-.577-.208-1.072-.146-1.175.063-.104.25-.167.5-.292z"/></svg>
+                    WhatsApp Contact
+                </a>
+                <a href="https://drive.usercontent.google.com/download?id=1wP8x_nDjmOrn8qYtHBxAo8P4I7DzXMp1&export=download&authuser=0" class="btn btn-primary nav-btn" target="_blank" rel="noopener noreferrer">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download Gettik Downloader</span>
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                <span class="badge-text">Gettik Downloader Enterprise v1.0</span>
+                <span class="badge-tag">Desktop Edition</span>
+            </div>
+
+            <h1 class="hero-title">
+                Gettik Downloader <span class="gradient-text">Enterprise</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                The powerful desktop toolkit for TikTok creators, TikTok videos, YouTube videos, bulk downloads, smart splitting, and creator management.
+            </p>
+
+            <!-- Rotating Feature Typewriter Banner -->
+            <div class="hero-typewriter-container">
+                <span class="typewriter-label">ENGINEERED FOR:</span>
+                <span class="typewriter-wrapper">
+                    <span class="typewriter-text" id="hero-typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </span>
+            </div>
+
+            <div class="hero-cta">
+                <a href="https://drive.usercontent.google.com/download?id=1wP8x_nDjmOrn8qYtHBxAo8P4I7DzXMp1&export=download&authuser=0" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download Gettik Downloader</span>
+                </a>
+                <a href="https://wa.me/923178121095" target="_blank" class="btn btn-secondary btn-lg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.192 4.292-1.125z"/></svg>
+                    <span>Contact on WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Quick Specs Pills -->
+            <div class="hero-pills">
+                <div class="hero-pill"><span class="pill-icon">⚡</span> 10 Concurrent Workers</div>
+                <div class="hero-pill"><span class="pill-icon">✂️</span> Smart Auto Split</div>
+                <div class="hero-pill"><span class="pill-icon">🔄</span> Smart DB Cache</div>
+                <div class="hero-pill"><span class="pill-icon">🎯</span> TikTok & YouTube Bulk</div>
+            </div>
+
+            <!-- Stylized Application Dashboard Mockup preview -->
+            <div class="hero-mockup-wrapper">
+                <div class="hero-mockup-frame glass-panel">
+                    <div class="mockup-header">
+                        <div class="mockup-window-controls">
+                            <span class="dot close"></span>
+                            <span class="dot minimize"></span>
+                            <span class="dot maximize"></span>
+                        </div>
+                        <div class="mockup-title">Gettik Downloader Enterprise v1.0 — [Active Desktop Session]</div>
+                        <div class="mockup-status-tag"><span class="status-online"></span> 10 Workers Active</div>
+                    </div>
+                    <div class="mockup-body-preview">
+                        <!-- Sidebar preview -->
+                        <div class="mockup-sidebar">
+                            <div class="mockup-nav-item active">
+                                <span class="nav-ic">👥</span> Creator Manager
+                            </div>
+                            <div class="mockup-nav-item">
+                                <span class="nav-ic">🎵</span> TikTok Downloader
+                            </div>
+                            <div class="mockup-nav-item">
+                                <span class="nav-ic">▶️</span> YouTube Downloader
+                            </div>
+                            <div class="mockup-nav-item">
+                                <span class="nav-ic">📊</span> Live Downloads <span class="badge-mini">4</span>
+                            </div>
+                            <div class="mockup-nav-item">
+                                <span class="nav-ic">📜</span> History & Cache
+                            </div>
+                            <div class="mockup-nav-item">
+                                <span class="nav-ic">📈</span> Statistics
+                            </div>
+                        </div>
+                        <!-- Main Content preview -->
+                        <div class="mockup-content">
+                            <div class="mockup-toolbar">
+                                <div class="mockup-search-box">
+                                    <span class="search-icon">🔍</span>
+                                    <span>Enter TikTok @username or YouTube URL...</span>
+                                </div>
+                                <div class="mockup-quick-actions">
+                                    <span class="btn-micro primary">Download All Creators</span>
+                                    <span class="btn-micro">Stop All</span>
+                                </div>
+                            </div>
+                            <!-- Active Live Downloads Rows inside Mockup -->
+                            <div class="mockup-download-cards">
+                                <div class="mockup-dl-card">
+                                    <div class="mockup-dl-info">
+                                        <div class="mockup-dl-title">@tech_guru_daily — Video #142 (Auto Split 3 Parts)</div>
+                                        <div class="mockup-dl-meta">Worker #2 | 1080p | 45% | 00:18 remaining | 18.7 MB / 42.3 MB</div>
+                                    </div>
+                                    <div class="mockup-dl-progress">
+                                        <div class="progress-bar-fill" style="width: 45%;"></div>
+                                    </div>
+                                </div>
+                                <div class="mockup-dl-card">
+                                    <div class="mockup-dl-info">
+                                        <div class="mockup-dl-title">YouTube Shorts: 4K Tech Review & Benchmark</div>
+                                        <div class="mockup-dl-meta">Worker #5 | YT Downloads | 82% | 00:06 remaining | 34.1 MB / 41.5 MB</div>
+                                    </div>
+                                    <div class="mockup-dl-progress">
+                                        <div class="progress-bar-fill green" style="width: 82%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Feature Navigation / Animated Feature Line -->
+    <section class="ticker-section" id="feature-line">
+        <div class="ticker-heading">
+            <span class="ticker-label">MAIN FEATURE NAVIGATION</span>
+            <span class="ticker-sub">Continuous Live Engine Flow</span>
+        </div>
+        <div class="ticker-wrapper">
+            <div class="ticker-track" id="ticker-track">
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> TikTok Creator Downloader</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> TikTok Video Downloader</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> YouTube Downloader</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Bulk Downloads</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Auto Split</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Creator Manager</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Smart Video Cache</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Download Dashboard</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Download History</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Statistics</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Announcements</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Fast Performance</div>
+                <!-- Duplicate for seamless looping -->
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> TikTok Creator Downloader</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> TikTok Video Downloader</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> YouTube Downloader</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Bulk Downloads</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Auto Split</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Creator Manager</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Smart Video Cache</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Download Dashboard</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Download History</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Statistics</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Announcements</div>
+                <div class="ticker-item"><span class="ticker-bullet">✦</span> Fast Performance</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Product Showcase Section -->
+    <section class="showcase-section" id="showcase">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">INTERACTIVE DEMO</span>
+                <h2 class="section-title">Experience the Desktop Application</h2>
+                <p class="section-description">
+                    Switch between the live mock interfaces to explore the workflow, queue tracking, creator manager, and auto-split setup.
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="showcase-tabs">
+                <button class="showcase-tab active" data-target="screen-creator">
+                    <span class="tab-icon">👥</span>
+                    <span>Creator Manager</span>
+                </button>
+                <button class="showcase-tab" data-target="screen-tiktok">
+                    <span class="tab-icon">🎵</span>
+                    <span>TikTok Downloader</span>
+                </button>
+                <button class="showcase-tab" data-target="screen-youtube">
+                    <span class="tab-icon">▶️</span>
+                    <span>YouTube Downloader</span>
+                </button>
+                <button class="showcase-tab" data-target="screen-dashboard">
+                    <span class="tab-icon">⚡</span>
+                    <span>Live Dashboard</span>
+                </button>
+                <button class="showcase-tab" data-target="screen-history">
+                    <span class="tab-icon">📜</span>
+                    <span>History & Cache</span>
+                </button>
+                <button class="showcase-tab" data-target="screen-stats">
+                    <span class="tab-icon">📊</span>
+                    <span>Statistics</span>
+                </button>
+            </div>
+
+            <!-- Interactive Screen Switcher Container -->
+            <div class="showcase-screen-container glass-panel">
+                <!-- Screen 1: TikTok Creator Manager -->
+                <div class="screen-view active" id="screen-creator">
+                    <div class="screen-header-bar">
+                        <div class="screen-title-group">
+                            <h3>TikTok Creator Manager</h3>
+                            <span class="badge-accent">Persistent RAM Batch Engine</span>
+                        </div>
+                        <div class="screen-controls">
+                            <button class="btn btn-sm btn-primary">Download All Creators</button>
+                            <button class="btn btn-sm btn-secondary">Stop All Downloads</button>
+                            <button class="btn btn-sm btn-outline">+ Add Creator</button>
+                        </div>
+                    </div>
+                    <div class="creator-grid">
+                        <div class="creator-card">
+                            <div class="creator-avatar-wrap">
+                                <div class="creator-avatar">TG</div>
+                                <span class="creator-status-online"></span>
+                            </div>
+                            <div class="creator-details">
+                                <div class="creator-name">Tech Guru</div>
+                                <div class="creator-handle">@techgurudaily</div>
+                                <div class="creator-meta-stats">
+                                    <span>Total: <strong>148</strong></span>
+                                    <span>Remaining: <strong>12</strong></span>
+                                </div>
+                                <div class="creator-badge-quality">Quality: 1080p Original</div>
+                            </div>
+                            <div class="creator-actions">
+                                <button class="btn-icon-sm" title="Run Download">▶</button>
+                                <button class="btn-icon-sm" title="Stop">⏹</button>
+                                <button class="btn-icon-sm" title="Re-Download">🔄</button>
+                                <button class="btn-icon-sm" title="Edit">✏️</button>
+                                <button class="btn-icon-sm danger" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+
+                        <div class="creator-card">
+                            <div class="creator-avatar-wrap">
+                                <div class="creator-avatar alt-1">DL</div>
+                                <span class="creator-status-online"></span>
+                            </div>
+                            <div class="creator-details">
+                                <div class="creator-name">Daily Life Vlog</div>
+                                <div class="creator-handle">@dailylife_vlog</div>
+                                <div class="creator-meta-stats">
+                                    <span>Total: <strong>320</strong></span>
+                                    <span>Remaining: <strong>0 (Synced)</strong></span>
+                                </div>
+                                <div class="creator-badge-quality">Quality: Highest Available</div>
+                            </div>
+                            <div class="creator-actions">
+                                <button class="btn-icon-sm" title="Run Download">▶</button>
+                                <button class="btn-icon-sm" title="Stop">⏹</button>
+                                <button class="btn-icon-sm" title="Re-Download">🔄</button>
+                                <button class="btn-icon-sm" title="Edit">✏️</button>
+                                <button class="btn-icon-sm danger" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+
+                        <div class="creator-card">
+                            <div class="creator-avatar-wrap">
+                                <div class="creator-avatar alt-2">CC</div>
+                                <span class="creator-status-idle"></span>
+                            </div>
+                            <div class="creator-details">
+                                <div class="creator-name">Cooking Clips</div>
+                                <div class="creator-handle">@chef_masterclass</div>
+                                <div class="creator-meta-stats">
+                                    <span>Total: <strong>84</strong></span>
+                                    <span>Remaining: <strong>45</strong></span>
+                                </div>
+                                <div class="creator-badge-quality">Quality: 720p HD</div>
+                            </div>
+                            <div class="creator-actions">
+                                <button class="btn-icon-sm" title="Run Download">▶</button>
+                                <button class="btn-icon-sm" title="Stop">⏹</button>
+                                <button class="btn-icon-sm" title="Re-Download">🔄</button>
+                                <button class="btn-icon-sm" title="Edit">✏️</button>
+                                <button class="btn-icon-sm danger" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screen 2: TikTok Downloader -->
+                <div class="screen-view" id="screen-tiktok">
+                    <div class="screen-header-bar">
+                        <div class="screen-title-group">
+                            <h3>TikTok Video Downloader</h3>
+                            <span class="badge-accent">Single & Bulk Link Support</span>
+                        </div>
+                    </div>
+                    <div class="input-showcase-box">
+                        <label>Paste TikTok Video URL or @username:</label>
+                        <div class="input-with-button">
+                            <input type="text" readonly value="https://www.tiktok.com/@techgurudaily/video/729481029381920" class="mock-input">
+                            <button class="btn btn-primary">Fetch Video Metadata</button>
+                        </div>
+                    </div>
+                    <div class="fetched-card">
+                        <div class="fetched-thumb-placeholder">
+                            <span class="thumb-icon">🎵</span>
+                            <span class="thumb-duration">01:45</span>
+                        </div>
+                        <div class="fetched-details">
+                            <div class="fetched-title">Top 10 Productivity Gadgets Every Creator Needs in 2026</div>
+                            <div class="fetched-author">By @techgurudaily | 1.2M Views</div>
+                            <div class="fetched-options">
+                                <div class="opt-group">
+                                    <label>Quality:</label>
+                                    <span class="mock-select">Original 1080p (No Watermark)</span>
+                                </div>
+                                <div class="opt-group">
+                                    <label>Auto Split:</label>
+                                    <span class="mock-select">Enabled (3 Output Parts)</span>
+                                </div>
+                            </div>
+                            <div class="fetched-buttons">
+                                <button class="btn btn-sm btn-primary">Start Download</button>
+                                <button class="btn btn-sm btn-secondary">Re-Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screen 3: YouTube Downloader -->
+                <div class="screen-view" id="screen-youtube">
+                    <div class="screen-header-bar">
+                        <div class="screen-title-group">
+                            <h3>YouTube Downloader</h3>
+                            <span class="badge-accent">Dedicated 'YT Downloads' Directory</span>
+                        </div>
+                    </div>
+                    <div class="input-showcase-box">
+                        <label>YouTube Videos & Shorts URLs (One URL per line for Bulk):</label>
+                        <textarea class="mock-textarea" readonly>https://www.youtube.com/watch?v=dQw4w9WgXcQ
+https://www.youtube.com/shorts/k93nF0xL0aM
+https://www.youtube.com/watch?v=7x9M84k1zPq</textarea>
+                        <div class="input-actions-row">
+                            <span class="hint-txt">Top settings auto-apply to fetched videos</span>
+                            <button class="btn btn-primary">Fetch All YouTube Metadata</button>
+                        </div>
+                    </div>
+                    <div class="fetched-card">
+                        <div class="fetched-thumb-placeholder yt">
+                            <span class="thumb-icon">▶️</span>
+                            <span class="thumb-duration">12:30</span>
+                        </div>
+                        <div class="fetched-details">
+                            <div class="fetched-title">Full Masterclass: Building High-Performance Desktop Software</div>
+                            <div class="fetched-author">Channel: Tech Architecture Hub | HD 1080p</div>
+                            <div class="fetched-options">
+                                <div class="opt-group">
+                                    <label>Destination:</label>
+                                    <span class="mock-select">Dedicated `YT Downloads` Folder</span>
+                                </div>
+                                <div class="opt-group">
+                                    <label>Parts Selection:</label>
+                                    <span class="mock-select">Auto Split Into 4 Parts</span>
+                                </div>
+                            </div>
+                            <div class="fetched-buttons">
+                                <button class="btn btn-sm btn-primary">Download to YT Folder</button>
+                                <button class="btn btn-sm btn-secondary">Re-Download Card</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screen 4: Live Downloads Dashboard -->
+                <div class="screen-view" id="screen-dashboard">
+                    <div class="screen-header-bar">
+                        <div class="screen-title-group">
+                            <h3>Live Downloads Dashboard</h3>
+                            <span class="badge-accent">10 Active Workers Concurrency Engine</span>
+                        </div>
+                        <button class="btn btn-sm btn-outline">Clear Completed Downloads</button>
+                    </div>
+
+                    <div class="live-workers-grid">
+                        <div class="worker-card processing">
+                            <div class="worker-header">
+                                <span class="worker-badge">Worker #1 — Processing</span>
+                                <span class="worker-speed">4.8 MB/s</span>
+                            </div>
+                            <div class="worker-title">@creator1 / video_part1.mp4</div>
+                            <div class="worker-stats">65% | 00:14 remaining | 26.0 MB / 40.0 MB</div>
+                            <div class="worker-progress"><div class="progress-bar-fill" style="width: 65%;"></div></div>
+                        </div>
+
+                        <div class="worker-card processing">
+                            <div class="worker-header">
+                                <span class="worker-badge">Worker #2 — Processing</span>
+                                <span class="worker-speed">6.2 MB/s</span>
+                            </div>
+                            <div class="worker-title">YouTube Shorts: AI Code Generation</div>
+                            <div class="worker-stats">88% | 00:04 remaining | 36.9 MB / 42.0 MB</div>
+                            <div class="worker-progress"><div class="progress-bar-fill green" style="width: 88%;"></div></div>
+                        </div>
+
+                        <div class="worker-card retrying">
+                            <div class="worker-header">
+                                <span class="worker-badge retrying">Worker #3 — Retrying (Attempt 2/5)</span>
+                                <span class="worker-speed">Reconnecting...</span>
+                            </div>
+                            <div class="worker-title">@vlog_life / video_hd_split2.mp4</div>
+                            <div class="worker-stats">Task locked safely, resuming stream chunk...</div>
+                            <div class="worker-progress"><div class="progress-bar-fill orange" style="width: 15%;"></div></div>
+                        </div>
+
+                        <div class="worker-card completed">
+                            <div class="worker-header">
+                                <span class="worker-badge done">Worker #4 — Completed</span>
+                                <span class="worker-speed">Finished</span>
+                            </div>
+                            <div class="worker-title">@techgurudaily / part_03.mp4</div>
+                            <div class="worker-stats">100% | 00:00 remaining | 52.4 MB / 52.4 MB</div>
+                            <div class="worker-progress"><div class="progress-bar-fill done" style="width: 100%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screen 5: History & Cache -->
+                <div class="screen-view" id="screen-history">
+                    <div class="screen-header-bar">
+                        <div class="screen-title-group">
+                            <h3>Download History & Smart Cache</h3>
+                            <span class="badge-accent">Platform + Video ID Deduplication</span>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="mock-table">
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>Video ID / Handle</th>
+                                    <th>Title / Output Parts</th>
+                                    <th>Cache Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge-plat tt">TikTok</span></td>
+                                    <td>729481029381920</td>
+                                    <td>Top 10 Gadgets (Part 1 of 3)</td>
+                                    <td><span class="status-chip success">Skipped (Cached)</span></td>
+                                    <td><button class="btn-xs">Re-Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-plat yt">YouTube</span></td>
+                                    <td>k93nF0xL0aM</td>
+                                    <td>AI Masterclass (Shorts Part 1)</td>
+                                    <td><span class="status-chip success">Completed</span></td>
+                                    <td><button class="btn-xs">Re-Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-plat tt">TikTok</span></td>
+                                    <td>849201948102941</td>
+                                    <td>Cooking Guide Ep #4</td>
+                                    <td><span class="status-chip success">Completed</span></td>
+                                    <td><button class="btn-xs">Re-Download</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Screen 6: Statistics -->
+                <div class="screen-view" id="screen-stats">
+                    <div class="screen-header-bar">
+                        <div class="screen-title-group">
+                            <h3>Application Statistics</h3>
+                            <span class="badge-accent">Local Activity Insights</span>
+                        </div>
+                    </div>
+                    <div class="stats-overview-grid">
+                        <div class="stat-box">
+                            <div class="stat-num glow-cyan">1,248</div>
+                            <div class="stat-label">Total Videos Processed</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num glow-blue">99.4%</div>
+                            <div class="stat-label">Engine Success Rate</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num glow-purple">3,744</div>
+                            <div class="stat-label">Auto-Split Parts Saved</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num glow-green">42.8 GB</div>
+                            <div class="stat-label">Bandwidth Saved via Cache</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Feature Sections Grid -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">COMPLETE SPECIFICATION</span>
+                <h2 class="section-title">Built For Heavy Creator Workflows</h2>
+                <p class="section-description">
+                    Every feature engineered for maximum throughput, low RAM footprint, and persistent tracking.
+                </p>
+            </div>
+
+            <!-- Feature Spotlight 1: TikTok Creator Downloader -->
+            <div class="feature-spotlight-card glass-panel" id="tiktok">
+                <div class="spotlight-grid">
+                    <div class="spotlight-content">
+                        <div class="feature-badge"><span class="icon">👥</span> Feature #1</div>
+                        <h3 class="feature-heading">TikTok Creator Downloader</h3>
+                        <p class="feature-lead">
+                            Full creator discovery and profile management. Easily add TikTok creators by username or profile URL and let the background batch engine do the rest.
+                        </p>
+                        <ul class="feature-bullets">
+                            <li><span class="bullet-check">✓</span> <strong>Creator List & Avatars:</strong> Profile placeholder/avatar support with real-time remaining video indicators.</li>
+                            <li><span class="bullet-check">✓</span> <strong>Smart Incremental Sync:</strong> Download only pending/new videos; already downloaded videos are skipped automatically.</li>
+                            <li><span class="bullet-check">✓</span> <strong>Persistent State & RAM Optimization:</strong> Large creator lists are processed in pagination batches to maintain low RAM usage.</li>
+                            <li><span class="bullet-check">✓</span> <strong>Bulk & Granular Controls:</strong> Run All, Stop All, Re-Download, Edit, and Delete options.</li>
+                        </ul>
+                    </div>
+                    <div class="spotlight-visual">
+                        <div class="visual-box glass-card">
+                            <div class="card-top">
+                                <span class="tag-live">CREATOR ENGINE</span>
+                                <span class="tag-sub">Persisted Batch System</span>
+                            </div>
+                            <div class="creator-preview-mini">
+                                <div class="mini-avatar">@user</div>
+                                <div class="mini-info">
+                                    <div class="mini-title">@tech_creator</div>
+                                    <div class="mini-progress-txt">Downloading: 14/156 videos</div>
+                                    <div class="mini-bar"><div class="mini-fill" style="width: 28%"></div></div>
+                                </div>
+                            </div>
+                            <div class="visual-badges">
+                                <span class="mini-chip">Quality Selection</span>
+                                <span class="mini-chip">Re-Download Support</span>
+                                <span class="mini-chip">Low Memory Batching</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Spotlight 2: TikTok Video Downloader -->
+            <div class="feature-spotlight-card glass-panel alt-layout">
+                <div class="spotlight-grid">
+                    <div class="spotlight-visual">
+                        <div class="visual-box glass-card">
+                            <div class="card-top">
+                                <span class="tag-live">SINGLE & BULK TT</span>
+                                <span class="tag-sub">Duplicate Protection</span>
+                            </div>
+                            <div class="video-preview-mini">
+                                <div class="preview-badge-quality">HD 1080p Original</div>
+                                <div class="preview-title-box">TikTok Video Metadata & Auto-Split Config</div>
+                                <div class="preview-status-box">Status: Ready for 10-Worker Queue</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spotlight-content">
+                        <div class="feature-badge"><span class="icon">🎵</span> Feature #2</div>
+                        <h3 class="feature-heading">TikTok Video Downloader</h3>
+                        <p class="feature-lead">
+                            Download individual or bulk TikTok videos effortlessly by pasting video links or creator handles.
+                        </p>
+                        <ul class="feature-bullets">
+                            <li><span class="bullet-check">✓</span> <strong>Metadata & Previews:</strong> Instant video thumbnail, title, and creator info retrieval.</li>
+                            <li><span class="bullet-check">✓</span> <strong>Duplicate-Download Protection:</strong> Checks local history to prevent downloading identical videos twice.</li>
+                            <li><span class="bullet-check">✓</span> <strong>Auto Split Integration:</strong> Option to auto-split videos into equal clips during single/bulk downloads.</li>
+                            <li><span class="bullet-check">✓</span> <strong>Re-Download Support:</strong> Explicitly re-download any video whenever needed.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Spotlight 3: Dedicated YouTube Downloader -->
+            <div class="feature-spotlight-card glass-panel" id="youtube">
+                <div class="spotlight-grid">
+                    <div class="spotlight-content">
+                        <div class="feature-badge"><span class="icon">▶️</span> Feature #3</div>
+                        <h3 class="feature-heading">Dedicated YouTube Downloader</h3>
+                        <p class="feature-lead">
+                            Full support for YouTube regular videos and YouTube Shorts. Dedicated pipeline saving directly into the custom `YT Downloads` directory.
+                        </p>
+                        <ul class="feature-bullets">
+                            <li><span class="bullet-check">✓</span> <strong>YouTube Shorts & Long-Form:</strong> Fetch metadata (thumbnail, title, channel name) before starting.</li>
+                            <li><span class="bullet-check">✓</span> <strong>Dedicated `YT Downloads` Directory:</strong> Isolated save location for quick file organization.</li>
+                            <li><span class="bullet-check">✓</span> <strong>Top Settings Auto-Apply:</strong> Quality choices and parts selection apply automatically to fetched videos.</li>
+                            <li><span class="bullet-check">✓</span> <strong>Cached Metadata Reuse:</strong> Reuses fetched info instead of making redundant network calls.</li>
+                        </ul>
+                        <div class="notice-callout">
+                            <span class="icon">ℹ️</span>
+                            <span>Standard compliance notice: Operates strictly within user-provided standard video workflows.</span>
+                        </div>
+                    </div>
+                    <div class="spotlight-visual">
+                        <div class="visual-box glass-card yt-accent">
+                            <div class="card-top">
+                                <span class="tag-live red">YOUTUBE ENGINE</span>
+                                <span class="tag-sub">YT Downloads Save Path</span>
+                            </div>
+                            <div class="yt-preview-box">
+                                <div class="yt-title">YouTube Shorts & Video Batch Handler</div>
+                                <div class="yt-path">Folder: C:/Downloads/YT Downloads/</div>
+                                <div class="yt-pills">
+                                    <span class="mini-chip">Quality Selector</span>
+                                    <span class="mini-chip">Parts Selection</span>
+                                    <span class="mini-chip">Re-Download Inside Card</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Spotlight 4: Smart Auto Split Interactive Simulator -->
+            <div class="feature-spotlight-card glass-panel highlight-border" id="auto-split">
+                <div class="section-header text-center">
+                    <div class="feature-badge center"><span class="icon">✂️</span> Feature #4</div>
+                    <h3 class="feature-heading">Smart Video Auto Split Engine</h3>
+                    <p class="feature-lead">
+                        Intelligent splitting system designed for short-form platforms. Videos 35 seconds or shorter are left untouched. Videos longer than 35s can be automatically split into equal parts.
+                    </p>
+                </div>
+
+                <!-- Formula Highlight Box -->
+                <div class="split-formula-banner">
+                    <div class="formula-title">STRICT SPLIT ENGINE RULE:</div>
+                    <div class="formula-math">1 video + 3 parts = 3 final output files <span class="sub-text">(not 4)</span></div>
+                    <p class="formula-desc">
+                        When Auto Split is enabled, ONLY split output parts are saved. The original full video is used temporarily for processing and automatically removed so your disk stays clean.
+                    </p>
+                </div>
+
+                <!-- Interactive Auto Split Simulator -->
+                <div class="split-simulator glass-card">
+                    <div class="sim-header">
+                        <h4>Interactive Auto Split Calculator</h4>
+                        <span>Test how Gettik splits your videos in real time</span>
+                    </div>
+
+                    <div class="sim-controls">
+                        <div class="control-group">
+                            <label for="sim-duration">Video Duration: <span id="duration-val" class="val-highlight">90s</span></label>
+                            <input type="range" id="sim-duration" min="15" max="300" value="90" step="5">
+                        </div>
+
+                        <div class="control-group">
+                            <label for="sim-parts">Desired Output Parts: <span id="parts-val" class="val-highlight">3 Parts</span></label>
+                            <input type="range" id="sim-parts" min="2" max="6" value="3" step="1">
+                        </div>
+                    </div>
+
+                    <div class="sim-result-box" id="sim-result-box">
+                        <!-- Dynamic JS calculations inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid of Remaining Core Features -->
+            <div class="features-grid-3">
+                <!-- 5. Smart Download Cache -->
+                <div class="grid-card glass-panel">
+                    <div class="card-icon">🧠</div>
+                    <h4 class="card-title">5. Smart Download Cache</h4>
+                    <p class="card-desc">
+                        Database-backed persistent cache system. Videos are indexed by platform + video ID. Avoids redundant metadata requests and automatically skips previously completed downloads unless explicit Re-Download is selected.
+                    </p>
+                </div>
+
+                <!-- 6. Creator Sync -->
+                <div class="grid-card glass-panel">
+                    <div class="card-icon">🔄</div>
+                    <h4 class="card-title">6. Creator Sync Engine</h4>
+                    <p class="card-desc">
+                        Saves creator metadata without keeping bloated video files in RAM. Incremental pagination prevents RAM spikes. Weekly sync checks saved creators for new videos without re-downloading old history.
+                    </p>
+                </div>
+
+                <!-- 7. 10-Worker Download Queue -->
+                <div class="grid-card glass-panel" id="engine">
+                    <div class="card-icon">⚙️</div>
+                    <h4 class="card-title">7. 10-Worker Concurrency</h4>
+                    <p class="card-desc">
+                        Locked at exactly 10 concurrent workers for optimal stability. Concurrency locking prevents double downloads. Auto-retry support up to 5 total attempts across Pending, Processing, Retrying, Completed, and Failed states.
+                    </p>
+                </div>
+
+                <!-- 8. Fast Download Performance -->
+                <div class="grid-card glass-panel">
+                    <div class="card-icon">⚡</div>
+                    <h4 class="card-title">8. Stream-Optimized Architecture</h4>
+                    <p class="card-desc">
+                        Chunk-based streaming download pipeline, efficient network usage, and lightweight queue management. Engineered specifically to run smoothly even on lower-RAM PCs.
+                    </p>
+                </div>
+
+                <!-- 9. Live Downloads Dashboard -->
+                <div class="grid-card glass-panel">
+                    <div class="card-icon">🖥️</div>
+                    <h4 class="card-title">9. Live Downloads Dashboard</h4>
+                    <p class="card-desc">
+                        Real-time percentage, time remaining, file size tracking (e.g. <code>45% | 00:32 remaining | 18.7 MB / 42.3 MB</code>), outside-click close behavior, and responsive zero-scroll UI layout.
+                    </p>
+                </div>
+
+                <!-- 10. Creator Manager -->
+                <div class="grid-card glass-panel" id="creator-manager">
+                    <div class="card-icon">📋</div>
+                    <h4 class="card-title">10. Full Creator Manager</h4>
+                    <p class="card-desc">
+                        Manage creators in one grid: profile avatars, remaining count, quality settings, Run/Stop controls, Import/Export creator lists, and instant bulk action bar.
+                    </p>
+                </div>
+
+                <!-- 11. Download History -->
+                <div class="grid-card glass-panel">
+                    <div class="card-icon">📜</div>
+                    <h4 class="card-title">11. Central Download History</h4>
+                    <p class="card-desc">
+                        Tracks all processed videos across sessions. Prevents duplicate downloads while retaining full explicit Re-Download functionality.
+                    </p>
+                </div>
+
+                <!-- 12. Statistics -->
+                <div class="grid-card glass-panel">
+                    <div class="card-icon">📈</div>
+                    <h4 class="card-title">12. Activity & Metrics</h4>
+                    <p class="card-desc">
+                        Clean application statistics dashboard showing completed downloads, creator activity, and bandwidth management metrics without exposing private data.
+                    </p>
+                </div>
+
+                <!-- 13. Announcements & License -->
+                <div class="grid-card glass-panel">
+                    <div class="card-icon">📢</div>
+                    <h4 class="card-title">13. In-App Announcements & Licenses</h4>
+                    <p class="card-desc">
+                        Admin-to-user in-app announcements feed alongside secure account authentication, plan status tracking, and Lifetime license tier support.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedicated Speed & Performance Section -->
+    <section class="performance-section" id="performance">
+        <div class="container">
+            <div class="perf-card glass-panel">
+                <div class="perf-header text-center">
+                    <span class="section-tag">ENGINEERING HIGHLIGHT</span>
+                    <h2 class="section-title">Built for Speed. Designed to Stay Responsive.</h2>
+                    <p class="section-description">
+                        Gettik Downloader Enterprise is designed to run seamlessly on your desktop without slowing down your system or spiking memory.
+                    </p>
+                </div>
+
+                <div class="perf-grid">
+                    <div class="perf-item">
+                        <div class="perf-icon">🪶</div>
+                        <div class="perf-info">
+                            <h5>Lightweight Native UI</h5>
+                            <p>Non-blocking UI threads keep buttons and dashboards instantly responsive during heavy downloads.</p>
+                        </div>
+                    </div>
+
+                    <div class="perf-item">
+                        <div class="perf-icon">🧠</div>
+                        <div class="perf-info">
+                            <h5>Memory-Conscious Batching</h5>
+                            <p>Processes large creator lists in incremental chunks to preserve lower-RAM PC performance.</p>
+                        </div>
+                    </div>
+
+                    <div class="perf-item">
+                        <div class="perf-icon">🛡️</div>
+                        <div class="perf-info">
+                            <h5>Strict 10-Worker Lock</h5>
+                            <p>Task locking prevents worker collisions and eliminates unnecessary network overhead.</p>
+                        </div>
+                    </div>
+
+                    <div class="perf-item">
+                        <div class="perf-icon">⚡</div>
+                        <div class="perf-info">
+                            <h5>Chunk-Based Network I/O</h5>
+                            <p>Optimized streaming download handlers maximize available network throughput safely.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Metrics Bar -->
+                <div class="perf-counters">
+                    <div class="counter-box">
+                        <div class="counter-number" data-target="10">0</div>
+                        <div class="counter-label">Concurrent Workers</div>
+                    </div>
+                    <div class="counter-box">
+                        <div class="counter-number" data-target="5">0</div>
+                        <div class="counter-label">Auto Retry Attempts</div>
+                    </div>
+                    <div class="counter-box">
+                        <div class="counter-number" data-target="35">0</div>
+                        <div class="counter-label">Sec Auto-Split Threshold</div>
+                    </div>
+                    <div class="counter-box">
+                        <div class="counter-number" data-target="100">0</div>
+                        <div class="counter-label">% Local DB Cache Skip</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administrator Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-card glass-panel">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <span class="section-tag">ADMINISTRATOR DIRECT CONTACT</span>
+                        <h2 class="contact-title">Get License & Software Support</h2>
+                        <p class="contact-desc">
+                            Connect directly with the software administrator for enterprise license activation, setup assistance, and queries.
+                        </p>
+                        
+                        <div class="admin-profile-box">
+                            <div class="admin-avatar">WA</div>
+                            <div class="admin-details">
+                                <div class="admin-role">Software Administrator</div>
+                                <div class="admin-name">Waqas Akram</div>
+                                <div class="admin-whatsapp">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.192 4.292-1.125z"/></svg>
+                                    <span id="whatsapp-number-text">03178121095</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-actions-box">
+                        <a href="https://wa.me/923178121095" target="_blank" class="btn btn-primary btn-block">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.192 4.292-1.125z"/></svg>
+                            <span>Contact on WhatsApp</span>
+                        </a>
+
+                        <button class="btn btn-secondary btn-block" id="copy-number-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span>Copy WhatsApp Number</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box glass-panel text-center">
+                <h2 class="cta-heading">Ready to Download Smarter?</h2>
+                <p class="cta-text">
+                    Explore the Gettik Downloader Enterprise experience and manage TikTok and YouTube downloads from one powerful desktop application.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://drive.usercontent.google.com/download?id=1wP8x_nDjmOrn8qYtHBxAo8P4I7DzXMp1&export=download&authuser=0" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>Download Gettik Downloader</span>
+                    </a>
+                    <a href="https://wa.me/923178121095" target="_blank" class="btn btn-secondary btn-lg">Contact Administrator</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-text">
+                        <span class="brand-name">Gettik</span>
+                        <span class="brand-badge">ENTERPRISE v1.0</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Powerful TikTok & YouTube downloading, creator management, smart splitting, and fast bulk workflows — all in one desktop application.
+                    </p>
+                </div>
+
+                <div class="footer-links-column">
+                    <h5>Quick Navigation</h5>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#tiktok">TikTok Downloader</a></li>
+                        <li><a href="#youtube">YouTube Downloader</a></li>
+                        <li><a href="#creator-manager">Creator Manager</a></li>
+                        <li><a href="#performance">Performance</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-admin-column">
+                    <h5>Administrator Details</h5>
+                    <p><strong>Administrator:</strong> Waqas Akram</p>
+                    <p><strong>WhatsApp:</strong> 03178121095</p>
+                    <div class="footer-wa-link">
+                        <a href="https://wa.me/923178121095" target="_blank" class="link-wa">Open WhatsApp Chat &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gettik Downloader Enterprise v1.0. All rights reserved. Desktop Edition.</p>
+                <p class="disclaimer-txt">Designed for standard creator workflows. Third-party brand names remain property of their respective owners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
